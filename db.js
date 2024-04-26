@@ -10,6 +10,9 @@ module.exports = {
         .then((client) => {
             console.log('Connected to MongoDB');
             dbConnection = client.db();
+            const db = mongoClient.db("test");
+            const collection = db.collection("Orders");
+            const user = {items: cart, address: deliveryAddress, time: deliveryTime, comment: orderComment };
             return cb();
         })
         .catch((err) => {

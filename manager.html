@@ -1,37 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Список заказов</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Страница менеджера</title>
+<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <h1>Список заказов</h1>
 
-    <ul id="orders-list">
-        <li>
-            <div>Заказ #1</div>
-            <div id="order1" class="order-details">
-                <p>Пиццы:</p>
-                <p>Сумма:</p>
-                <button onclick="deleteOrder('order1')">Удалить</button>
-                <button>Добавить пиццу</button>
-            </div>
-        </li>
-        <li>
-            <div>Заказ #2</div>
-            <div id="order2" class="order-details">
-                <p>Пиццы:</p>
-                <p>Сумма:</p>
-                <button onclick="deleteOrder('order2')">Удалить</button>
-                <button>Добавить пиццу</button>
-            </div>
-        </li>
-    </ul>
+<h1>Список заказов</h1>
 
-    <script>
-        function deleteOrder(orderId) {
-            var orderElement = document.getElementById(orderId);
-            orderElement.parentNode.remove();
-        }
-    </script>
+<div id="ordersContainer" class="orders-container">
+</div>
+
+<script>
+    let orders = [
+        { id: 1, name: 'Заказ #1', status: 'Новый' },
+        { id: 2, name: 'Заказ #2', status: 'Новый' },
+        { id: 3, name: 'Заказ #3', status: 'Новый' }
+    ];
+
+    function displayOrders() {
+        let ordersContainer = document.getElementById('ordersContainer');
+        ordersContainer.innerHTML = '';
+
+        orders.forEach(order => {
+            let orderDiv = document.createElement('div');
+            orderDiv.classList.add('order');
+            orderDiv.innerHTML = `
+                <h3>${order.name}</h3>
+                <p>Статус: ${order.status}</p>
+                <button class="orderButton startWorking" onclick="startWorking(${order.id}, this)">Начать работу</button>
+            `;
+            ordersContainer.appendChild(orderDiv);
+        });
+    }
+
+    function startWorking(orderId, button) {
+        alert(`Заказ #${orderId} принят в работу.`);
+
+        let orderDiv = button.parentNode;
+        let statusTextElement = orderDiv.querySelector('p');
+        statusTextElement.textContent = 'Статус: Принят';
+        button.style.display = 'none';
+    }
+
+    window.onload = function() {
+        displayOrders();
+    };
+</script>
+
 </body>
 </html>

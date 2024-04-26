@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yummy Доставка</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<div class="container">
+    <h1>  </h1>
+
+
+<body>
+    <body>
+        <header>
+          <div class="logo">
+            <img src="img\logo.png" alt="логотип" class="logo__img" />
+          </div>
+        </header>
+        
+
+<div class="container">
+    <h1>Yummy Доставка</h1>
+    <div class="menu">
+        <div class="menuItem">
+            <img src="img\воппер.jpg" alt="Блюдо 1">
+            <h3>Воппер</h3>
+            <p>Теперь ещё больше соуса! Внутри две фирменных 100%-х говядины, приготовленных на огне, с сочными томатами, свежим салатом Айсберг, густой порцией майонеза, хрустящими маринованными огурчиками и свежим луком на нежной булочке с кунжутом.</p>
+            <select class="ingredientSelect">
+                <option value="-">Оставить так</option>
+                <option value="Без лука">Без лука</option>
+                <option value="Без помидоров">Без помидоров</option>
+                <option value="Без огурцов">Без огурцов</option>
+            </select>
+            <button class="addToCart" data-name="Воппер" data-price="300">Добавить в корзину</button>
+        </div>
+        <div class="menuItem">
+            <img src="img\ангус.jpg" alt="Блюдо 2">
+            <h3>Ангус</h3>
+            <p>Два сочных мраморных бифштекса Абердин Ангус, пикантный Пармезан и щедрая порция сырного соуса Пармеджано. А ещё здесь овощи: салат Романо, маринованный красный лучок и свежие томаты — всё на булочке бриошь с двумя видами кунжута.</p>
+            <select class="ingredientSelect">
+                <option value="-">Оставить так</option>
+                <option value="Без лука">Без лука</option>
+                <option value="Без помидоров">Без помидоров</option>
+                <option value="Без сыра">Без сыра</option>
+                <option value="Без салата">Без салата</option>
+            </select>
+            <button class="addToCart" data-name="Ангус" data-price="700">Добавить в корзину</button>
+        </div>
+        <div class="menuItem">
+            <img src="img\гранд чиз.jpg" alt="Блюдо 3">
+            <h3>Гранд Чиз</h3>
+            <p>Наша новая классика с нежным бифштексом по-домашнему: к фирменной говядине мы добавили немного сочной курочки. Любимое сочетание сыра Чеддер, маринованных огурчиков, лука, кетчупа и горчицы — на подрумяненной булочке с кунжутом. Пробуй!.</p>
+            <select class="ingredientSelect">
+                <option value="-">Оставить так</option>
+                <option value="Без лука">Без лука</option>
+                <option value="Без помидоров">Без помидоров</option>
+                <option value="Без горчицы">Без горчицы</option>
+
+            </select>
+            <button class="addToCart" data-name="Гранд Чиз" data-price="600">Добавить в корзину</button>
+        </div>
+    </div>
+
+    <div class="cart" onclick="showCart()">Корзина</div>
+
+    <div class="overlay" id="overlay">
+        <div class="cartContainer">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Корзина</h2>
+            <ul id="cartItems"></ul>
+            <div class="checkout">
+                <label for="deliveryAddress">Адрес доставки:</label>
+                <input type="text" id="deliveryAddress"><br><br>
+                <label for="deliveryTime">Время доставки:</label>
+                <input type="datetime-local" id="deliveryTime" min="" required><br><br>
+                <label for="orderComment">Комментарий к заказу:</label><br>
+                <textarea id="orderComment" rows="4" cols="50"></textarea><br><br>
+                <button onclick="placeOrder()">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

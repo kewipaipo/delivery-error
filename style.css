@@ -1,11 +1,36 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background: #f4f4f4;
+    padding: 20px;
 }
 
+.order {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.order h3 {
+    margin-top: 0;
+}
+
+.orderButton {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.startWorking {
+    background-color: #FFA500;
+    color: white;
+}
+
+.startWorking:hover {
+    background-color: #ffc559;
+}
 
 .container {
     width: 80%;
@@ -16,12 +41,10 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
 h1 {
     color: #333;
     text-align: center;
 }
-
 
 .menu {
     display: flex;
@@ -29,7 +52,6 @@ h1 {
     flex-wrap: wrap;
     margin-top: 20px;
 }
-
 
 .menuItem {
     flex-basis: 30%;
@@ -50,14 +72,18 @@ h1 {
     color: #333;
 }
 
-
 .cart {
     background: #FFA500;
     color: white;
     padding: 10px;
+    border-radius: 5px;
     text-align: center;
     cursor: pointer;
     margin-top: 20px;
+}
+
+.cart:hover {
+    background: #ffc559;
 }
 
 .overlay {
@@ -88,20 +114,19 @@ h1 {
     font-size: 24px;
 }
 
-
 button {
     background: #FFA500;
     color: white;
     border: none;
+    border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 10px;
 }
 
 button:hover {
-    background: #FFA500;
+    background: #ffc559;
 }
-
 
 input[type="text"],
 input[type="datetime-local"],
@@ -111,11 +136,9 @@ textarea {
     margin-top: 5px;
 }
 
-
 .checkout {
     margin-top: 20px;
 }
-
 
 @media (max-width: 768px) {
     .menu {
@@ -130,9 +153,6 @@ textarea {
         width: 90%;
     }
 }
-
-
-
 
 body {
     background-color: #ebebeb;
@@ -169,7 +189,6 @@ main {
     margin-top: 100px;
     margin-bottom: 20px;
 }
-
 
 footer {
     width: 100%;
